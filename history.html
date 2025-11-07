@@ -17,27 +17,14 @@
 </head>
 <body>
     <header>
-        <div class="header-top">
-            <div class="container">
-                <div class="header-info">
-                    <span class="header-tag" data-translate="header.tag">🇵🇱 Podróże z Polski</span>
-                    <span class="header-divider">|</span>
-                    <span class="header-phone"><span data-translate="header.phone">📞 Masz pytania?</span> <a href="contact.html" data-translate="header.phone.link">Napisz do nas</a></span>
-                </div>
-                <div class="lang-switcher">
-                    <button onclick="switchLanguage('pl')" class="lang-btn active" id="lang-pl">PL</button>
-                    <button onclick="switchLanguage('en')" class="lang-btn" id="lang-en">EN</button>
-                </div>
-            </div>
-        </div>
         <nav class="navbar">
             <div class="container">
                 <div class="logo">
                     <a href="index.html">
-                        <span class="logo-icon">🗺️</span>
+                        <span class="logo-mark">→</span>
                         <span class="logo-text">
                             <span class="logo-main" data-translate="logo.main">Podróże z Polski</span>
-                            <span class="logo-sub" data-translate="logo.sub">Sprawdzone kierunki i ceny</span>
+                            <span class="logo-tagline" data-translate="logo.tagline">przewodnik podróżnika</span>
                         </span>
                     </a>
                 </div>
@@ -47,6 +34,16 @@
                     <li><a href="about.html" data-translate="nav.about">O nas</a></li>
                     <li><a href="contact.html" data-translate="nav.contact">Kontakt</a></li>
                 </ul>
+                <div class="lang-switcher">
+                    <button onclick="switchLanguage('pl')" class="lang-btn active" id="lang-pl">
+                        <span class="lang-flag">🇵🇱</span>
+                        <span class="lang-code">PL</span>
+                    </button>
+                    <button onclick="switchLanguage('en')" class="lang-btn" id="lang-en">
+                        <span class="lang-flag">🇬🇧</span>
+                        <span class="lang-code">EN</span>
+                    </button>
+                </div>
             </div>
         </nav>
     </header>

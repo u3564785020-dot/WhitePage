@@ -14,11 +14,23 @@ const translations = {
         'nav.history': 'Moja historia',
         
         // Header
-        'header.tag': '🇵🇱 Podróże z Polski',
-        'header.phone': '📞 Masz pytania?',
-        'header.phone.link': 'Napisz do nas',
         'logo.main': 'Podróże z Polski',
-        'logo.sub': 'Sprawdzone kierunki i ceny',
+        'logo.tagline': 'przewodnik podróżnika',
+        
+        // Cookie
+        'cookie.title': 'Używamy plików cookie',
+        'cookie.description': 'Ta strona wykorzystuje pliki cookie w celu zapewnienia prawidłowego funkcjonowania strony, analizy ruchu użytkowników oraz personalizacji treści i reklam. Pliki cookie pomagają nam dostosować naszą ofertę do Twoich potrzeb.',
+        'cookie.necessary': 'Niezbędne:',
+        'cookie.necessary.desc': 'Wymagane do działania strony',
+        'cookie.analytics': 'Analityczne:',
+        'cookie.analytics.desc': 'Pomagają zrozumieć, jak użytkownicy korzystają ze strony',
+        'cookie.preferences': 'Preferencje:',
+        'cookie.preferences.desc': 'Zapamiętują Twoje ustawienia i preferencje',
+        'cookie.policy.link': 'Polityka prywatności',
+        'cookie.more.link': 'Więcej informacji',
+        'cookie.accept': 'Akceptuję wszystkie',
+        'cookie.reject': 'Odrzuć opcjonalne',
+        'cookie.settings': 'Ustawienia',
         
         // Footer additional
         'footer.stats.title': 'Ponad 50+ sprawdzonych kierunków',
@@ -425,11 +437,23 @@ const translations = {
         'history.mission.text2': 'This blog is my story, but also your guide. I hope you\'ll find inspiration and practical information here that will help you plan the perfect vacation. Because travel is not a luxury - it\'s a way of life.',
         
         // Header translations
-        'header.tag': '🇵🇱 Travels from Poland',
-        'header.phone': '📞 Have questions?',
-        'header.phone.link': 'Write to us',
         'logo.main': 'Travels from Poland',
-        'logo.sub': 'Verified destinations and prices',
+        'logo.tagline': 'traveler\'s guide',
+        
+        // Cookie
+        'cookie.title': 'We use cookies',
+        'cookie.description': 'This website uses cookies to ensure proper website functionality, analyze user traffic, and personalize content and ads. Cookies help us tailor our offer to your needs.',
+        'cookie.necessary': 'Necessary:',
+        'cookie.necessary.desc': 'Required for website functionality',
+        'cookie.analytics': 'Analytics:',
+        'cookie.analytics.desc': 'Help understand how users interact with the website',
+        'cookie.preferences': 'Preferences:',
+        'cookie.preferences.desc': 'Remember your settings and preferences',
+        'cookie.policy.link': 'Privacy Policy',
+        'cookie.more.link': 'More information',
+        'cookie.accept': 'Accept all',
+        'cookie.reject': 'Reject optional',
+        'cookie.settings': 'Settings',
         'nav.home': 'Home',
         'nav.history': 'My Story',
         'nav.about': 'About',
@@ -660,5 +684,68 @@ function initScrollFeatures() {
             ticking = true;
         }
     }, { passive: true });
+}
+
+// Cookie Banner functionality
+function initCookieBanner() {
+    // Check if user already made a choice
+    const cookieChoice = localStorage.getItem('cookieConsent');
+    
+    // Only show banner on index.html if no choice was made
+    if (window.location.pathname.endsWith('index.html') || window.location.pathname === '/' || window.location.pathname.endsWith('/')) {
+        if (!cookieChoice) {
+            const banner = document.getElementById('cookie-banner');
+            if (banner) {
+                // Show banner with animation after a short delay
+                setTimeout(() => {
+                    banner.style.display = 'block';
+                    setTimeout(() => {
+                        banner.classList.add('show');
+                    }, 100);
+                }, 500);
+            }
+        }
+    }
+}
+
+function acceptCookies() {
+    localStorage.setItem('cookieConsent', 'accepted');
+    hideCookieBanner();
+}
+
+function rejectCookies() {
+    localStorage.setItem('cookieConsent', 'rejected');
+    hideCookieBanner();
+}
+
+function hideCookieBanner() {
+    const banner = document.getElementById('cookie-banner');
+    if (banner) {
+        banner.classList.remove('show');
+        setTimeout(() => {
+            banner.style.display = 'none';
+        }, 400);
+    }
+}
+
+function showCookieSettings() {
+    // For now, just scroll to privacy section or show alert
+    // In a full implementation, this would open a modal with detailed cookie settings
+    const privacyLink = document.querySelector('.cookie-policy a[href*="privacy"]');
+    if (privacyLink) {
+        window.location.href = privacyLink.getAttribute('href');
+    } else {
+        // Fallback: show information about cookie settings
+        alert(currentLanguage === 'pl' 
+            ? 'Szczegółowe ustawienia plików cookie dostępne są w sekcji Polityka prywatności.' 
+            : 'Detailed cookie settings are available in the Privacy Policy section.');
+    }
+}
+
+// Initialize cookie banner when DOM is ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initCookieBanner);
+} else {
+    initCookieBanner();
 }
 
