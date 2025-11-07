@@ -548,6 +548,11 @@ function initPageLoader() {
         const link = e.target.closest('a');
         if (!link) return;
         
+        // Skip links inside cookie banner - they should work normally
+        if (link.closest('.cookie-banner') || link.closest('.cookie-policy')) {
+            return;
+        }
+        
         const href = link.getAttribute('href');
         if (!href) return;
         
@@ -571,13 +576,14 @@ function initPageLoader() {
             return;
         }
         
-        // Check if it's an internal HTML page link
-        const isInternal = href.endsWith('.html') || 
+        // Check if it's an internal HTML page link (but not anchor links)
+        const isInternal = (href.endsWith('.html') || 
                           href === 'index.html' ||
                           href === '/' ||
                           (!href.includes('://') && 
                            !href.startsWith('//') &&
-                           (href.startsWith('/') || href.includes('.html')));
+                           (href.startsWith('/') || href.includes('.html')))) &&
+                          !href.includes('#'); // Skip anchor links
         
         if (isInternal) {
             e.preventDefault();
