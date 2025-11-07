@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+    
+    <!-- Homepage -->
+    <url>
+        <loc>https://www.example.com/</loc>
+        <lastmod>2024-01-15</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://www.example.com/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.example.com/en/"/>
+    </url>
+    
+    <!-- Italy Page -->
+    <url>
+        <loc>https://www.example.com/italy.html</loc>
+        <lastmod>2024-01-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://www.example.com/italy.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.example.com/en/italy.html"/>
+        <image:image>
+            <image:loc>https://images.unsplash.com/photo-1515542622106-78bda8ba0e5b</image:loc>
+            <image:title>Italy - Rome</image:title>
+        </image:image>
+    </url>
+    
+    <!-- Greece Page -->
+    <url>
+        <loc>https://www.example.com/greece.html</loc>
+        <lastmod>2024-01-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://www.example.com/greece.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.example.com/en/greece.html"/>
+        <image:image>
+            <image:loc>https://images.unsplash.com/photo-1613395877344-13d4a8e0d49e</image:loc>
+            <image:title>Greece - Santorini</image:title>
+        </image:image>
+    </url>
+    
+    <!-- Spain Page -->
+    <url>
+        <loc>https://www.example.com/spain.html</loc>
+        <lastmod>2024-01-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://www.example.com/spain.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.example.com/en/spain.html"/>
+        <image:image>
+            <image:loc>https://images.unsplash.com/photo-1539037116277-4db20889f2d4</image:loc>
+            <image:title>Spain - Barcelona</image:title>
+        </image:image>
+    </url>
+    
+    <!-- About Page -->
+    <url>
+        <loc>https://www.example.com/about.html</loc>
+        <lastmod>2024-01-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://www.example.com/about.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.example.com/en/about.html"/>
+    </url>
+    
+    <!-- Contact Page -->
+    <url>
+        <loc>https://www.example.com/contact.html</loc>
+        <lastmod>2024-01-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://www.example.com/contact.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.example.com/en/contact.html"/>
+    </url>
+    
+</urlset>
+
